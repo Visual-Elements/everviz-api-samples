@@ -6,19 +6,17 @@ const cmsKey = '',
       page = 1,
       search = '';
 
-let	url = `https://api.everviz.com/team/${TEAM_ID}/projects/search/published?page=${page}&pageSize=${pageSize}&query=${search}`;
+const url = `https://api.everviz.com/team/${TEAM_ID}/projects/search/published?page=${page}&pageSize=${pageSize}&query=${search}`;
 
 fetch(url, {
   method: 'GET',
   headers: { 
-  	'Content-Type': 'application/json',
-  	'X-CMS-Key': cmsKey
+    'Content-Type': 'application/json',
+    'X-CMS-Key': cmsKey
    },
 })
 .then(res => res.json())
 .then(json => console.log(json))
 .catch((e) => {
-	console.log(e);
+  console.log(e);
 });
-
-
